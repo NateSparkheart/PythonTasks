@@ -1,0 +1,15 @@
+#Написать функцию, которая будет принимать одно значение - список. Функция должна возвращать самое частое значение в списке (встречается > N/2).
+#Пример: test_function(["A", "A", "A", "B", "C", "A"]) ➞ "A"
+
+task_10_list = ["A", "A", "A", "B", "C", "A", "C", "C", "C"]
+
+most_frequent = None
+quantity = 0
+
+for item in task_10_list:
+    q = task_10_list.count(item)
+    if q > quantity:
+        quantity = q
+        most_frequent = item
+
+print(most_frequent)
