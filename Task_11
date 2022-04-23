@@ -1,0 +1,26 @@
+#Создайте функцию для выполнения основных арифметических операций, которая применяет сложение, вычитание, умножение и деление к строковому значению 
+#(например, "12 + 24" или "23-21" или "12 // 12" или "12 * 21").
+#Здесь у нас есть 1 число, за которым следует пробел, затем оператор, за которым следует другой пробел, и 2 число. Возвращаемое значение должно быть числом.
+#Применение функции eval() не допускается. В случае деления, всякий раз, когда второе число равно "0", возвращайте -1.
+
+def task_11(a=str) -> float:
+    symbols = a.split()
+    if symbols[1] == '+':
+        return float(symbols[0]) + float(symbols[2])
+    if symbols[1] == '-':
+        return float(symbols[0]) - float(symbols[2])
+    if symbols[1] == '*':
+        return float(symbols[0]) * float(symbols[2])
+    if symbols[1] == '//':
+        if symbols[2] == '0':
+            return -1
+        else:
+            return float(symbols[0]) // float(symbols[2])
+        return float(symbols[0]) / float(symbols[2])
+    if symbols[1] == '/':
+        if symbols[2] == '0':
+            return -1
+        else:
+            return float(symbols[0]) / float(symbols[2])
+
+print(task_11(str(input())))
