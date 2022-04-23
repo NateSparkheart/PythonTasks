@@ -1,0 +1,10 @@
+#Написать функцию, которая будет принимать одно значение с логическими типы, а затем ковертировать их в строковые 'True' и 'False' и возвращать эти значения.
+
+def task_2(a=bool):
+    if a == True:
+        return 'True'
+    else:
+        return 'False'
+
+print(task_2(True))
+print(task_2(False))
