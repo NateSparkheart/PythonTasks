@@ -1,0 +1,21 @@
+#Создать функцию, которая вернет ближайшую к текущей странице главу. 
+#Если две главы одинаково близко, то выбирается та, которая находится на большей по порядку странице
+
+def task_18(content: list, page: int):
+    chapter = ''
+    for key in content:
+        if chapter == '':
+            chapter = key
+        else:
+            if abs(content[chapter] - page) > (abs(content[key] - page)):
+                chapter = key
+            elif abs(content[chapter] - page) == (abs(content[key] - page)):
+                if content[chapter] < content[key]:
+                    chapter = key
+    return chapter
+
+print(task_18({ "Chapter 1" : 1, "Chapter 2" : 15, "Chapter 3" : 37}, 10))
+
+print(task_18({"New Beginnings" : 1,"Strange Developments" : 62,"The End?" : 194,"The True Ending" : 460}, 200))
+
+print(task_18({"Chapter 1a" : 1,"Chapter 1b" : 5}, 3))
