@@ -3,3 +3,34 @@
 #предыдущим символом, итд. Если подается список - необходимо расшифровать его.
 #Алгоритм такой же - первое число перекодируется в соответствием с таблицей ascii, второй символ - 
 #сумма первого и второго числа перекодированная с помощью таблицы ascii.
+
+def task_14(a):
+    if isinstance(a, str):
+        result = []
+        i = 0
+        for symbol in a:
+            cipher = ord(symbol)
+            if i == 0:
+                result.append(cipher)
+            else:
+                cipher_prev = ord(a[i-1])
+                result.append(cipher - cipher_prev)
+            i += 1
+
+    elif isinstance(a, list):
+        result = ''
+        i = 0
+        for s in a:
+            if i == 0:
+                letter = chr(s)
+                result += letter
+            else:
+                cipher_prev = ord(result[i-1])
+                cipher = cipher_prev + a[i]
+                result += chr(cipher)
+            i += 1
+    return result
+
+print(task_14("Test"))
+
+print(task_14([4, 8, 15, 16, 23, 42]))
