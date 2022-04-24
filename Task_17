@@ -1,0 +1,27 @@
+#Имеется строк из символов в нижнем регистре ascii[["a".."z"]]. Нужно сократить строку следующим образом: 
+#берется пара соседних символов и если они одинаковы, то они удаляются. 
+#Например aab должно превратится в b. 
+#Нужно удалить как можно больше символов. Если результирующая строка пустая, нужно вернуть "Empty String"
+
+def task_17(a: str):
+    i = 0
+    result = ''
+    while i < len(a):
+        if a[i] != a[i + 1]:
+            result += a[i]
+            i += 1
+        else:
+            i += 2
+        if i == len(a) - 1:
+            result += a[i]
+            break
+        elif i > len(a) - 1:
+            break
+    if result == '':
+            return 'Empty String'
+    else:
+            return result
+
+
+print(task_17('QQQWWWERRRTTTY'))
+print(task_17(''))
